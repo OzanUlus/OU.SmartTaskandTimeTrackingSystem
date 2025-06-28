@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MassTransit;
+using Microsoft.EntityFrameworkCore;
 using SmartTaskandTimeTrackingSystem.DataAccess.Context;
 using SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Interfaces;
 using SmartTaskandTimeTrackingSystem.Domain.Entities;
@@ -9,6 +10,7 @@ namespace SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Concretes
     {
         public async Task<TEntity> CreateAsync(TEntity entity)
         {
+            entity.Id = NewId.NextSequentialGuid();
             var entry = await context.Set<TEntity>().AddAsync(entity);
             await context.SaveChangesAsync();
             return entry.Entity;
@@ -26,7 +28,7 @@ namespace SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Concretes
             return response;
         }
 
-        public async Task<TEntity> GetById(Guid id)
+        public async Task<TEntity> GetByIdAsync(Guid id)
         {
             return await context.Set<TEntity>().FindAsync(id);
         }

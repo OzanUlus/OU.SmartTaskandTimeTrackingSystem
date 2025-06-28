@@ -7,7 +7,7 @@ namespace SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Interfaces
         Task<TEntity> CreateAsync(TEntity entity);
         Task<TEntity> UpdateAsync(TEntity entity);
         Task<IEnumerable<TEntity>> GetAllAsync();
-        Task<TEntity> GetById(Guid id);
+        Task<TEntity> GetByIdAsync(Guid id);
         Task DeleteAsync(TEntity entity);
     }
 }

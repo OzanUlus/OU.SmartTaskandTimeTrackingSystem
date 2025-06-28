@@ -1,4 +1,5 @@
 using SmartTaskandTimeTrackingSystem.Api;
+using SmartTaskandTimeTrackingSystem.Bussiness.Extension;
 using SmartTaskandTimeTrackingSystem.DataAccess.Extension;
 using SmartTaskandTimeTrackingSystem.Shared.Extensions;
 
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCommonServiceExt(typeof(TaskAssembly));
 builder.Services.AddDataAccessDependency(builder.Configuration.GetConnectionString("sqlCon")!);
+builder.Services.AddBussinessDependency();
 
 var app = builder.Build();
 
