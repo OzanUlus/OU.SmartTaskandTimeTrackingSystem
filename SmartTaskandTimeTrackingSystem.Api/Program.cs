@@ -1,5 +1,6 @@
 using SmartTaskandTimeTrackingSystem.Api;
 using SmartTaskandTimeTrackingSystem.Api.Enpoints.Category;
+using SmartTaskandTimeTrackingSystem.Api.Enpoints.TaskItem;
 using SmartTaskandTimeTrackingSystem.Bussiness.Extension;
 using SmartTaskandTimeTrackingSystem.DataAccess.Extension;
 using SmartTaskandTimeTrackingSystem.Shared.Extensions;
@@ -27,6 +28,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.AddCategoryGroupEndpointExt();
+app.AddTakItemGroupEndpointExt();
 
 
 app.Run();

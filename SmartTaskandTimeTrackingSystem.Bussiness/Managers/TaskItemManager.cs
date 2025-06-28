@@ -12,8 +12,10 @@ namespace SmartTaskandTimeTrackingSystem.Bussiness.Managers
     {
         public async Task<IResult> AddTaskItemAsync(CreateTaskItemDto createTaskItemDto)
         {
-            createTaskItemDto.UserId = identityServiceFake.GetUserId;
+            
+            createTaskItemDto.Status = Domain.Enums.TaskStatus.Pending;
             var taskItem = createTaskItemDto.Adapt<TaskItem>();
+            taskItem.UserId = identityServiceFake.GetUserId;
             await taskItemRepository.CreateAsync(taskItem);
             return new SuccessResult("TaskItem created successfully.");
         }
@@ -52,6 +54,7 @@ namespace SmartTaskandTimeTrackingSystem.Bussiness.Managers
             taskItem.TaskCode = updateTaskItemDto.TaskCode;
             taskItem.UserId = identityServiceFake.GetUserId;
             taskItem.CategoryId = updateTaskItemDto.CategoryId;
+            taskItem.Status = Domain.Enums.TaskStatus.Pending;
             await taskItemRepository.UpdateAsync(taskItem);
             return new SuccessResult("TaskItem updated successfully.");
         }

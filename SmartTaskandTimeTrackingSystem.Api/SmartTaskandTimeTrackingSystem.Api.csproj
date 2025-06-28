@@ -20,8 +20,4 @@
     <ProjectReference Include="..\SmartTaskandTimeTrackingSystem.Shared\SmartTaskandTimeTrackingSystem.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Enpoints\TaskItem\" />
-  </ItemGroup>
-
 </Project>
