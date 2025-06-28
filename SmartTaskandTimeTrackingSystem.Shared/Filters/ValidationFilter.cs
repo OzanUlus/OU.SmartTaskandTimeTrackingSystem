@@ -33,5 +33,5 @@ namespace SmartTaskandTimeTrackingSystem.Shared.Filters
             return await next(context);
         }
     }
-    }
+    
 }

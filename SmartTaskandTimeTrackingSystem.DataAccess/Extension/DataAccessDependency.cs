@@ -21,9 +21,6 @@ namespace SmartTaskandTimeTrackingSystem.DataAccess.Extension
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 
-
-
-
             return services;
         
         }
