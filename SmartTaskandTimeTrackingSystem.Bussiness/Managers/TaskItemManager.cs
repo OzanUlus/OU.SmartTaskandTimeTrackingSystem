@@ -1,6 +1,6 @@
 ﻿using Mapster;
 using SmartTaskandTimeTrackingSystem.Bussiness.Services;
-using SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Concretes;
+using SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Interfaces;
 using SmartTaskandTimeTrackingSystem.Domain.Dtos.TaskItemDtos;
 using SmartTaskandTimeTrackingSystem.Domain.Entities;
 using SmartTaskandTimeTrackingSystem.Shared.Result;
@@ -8,7 +8,7 @@ using SmartTaskandTimeTrackingSystem.Shared.Services;
 
 namespace SmartTaskandTimeTrackingSystem.Bussiness.Managers
 {
-    public class TaskItemManager(TaskItemRepository taskItemRepository, IdentityServiceFake identityServiceFake) : ITaskItemService
+    public class TaskItemManager(ITaskItemRepository taskItemRepository, IIdentityService identityServiceFake) : ITaskItemService
     {
         public async Task<IResult> AddTaskItemAsync(CreateTaskItemDto createTaskItemDto)
         {

@@ -2,8 +2,6 @@ using SmartTaskandTimeTrackingSystem.Api;
 using SmartTaskandTimeTrackingSystem.Api.Enpoints.Category;
 using SmartTaskandTimeTrackingSystem.Bussiness.Extension;
 using SmartTaskandTimeTrackingSystem.DataAccess.Extension;
-using SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Concretes;
-using SmartTaskandTimeTrackingSystem.DataAccess.Repositories.Interfaces;
 using SmartTaskandTimeTrackingSystem.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

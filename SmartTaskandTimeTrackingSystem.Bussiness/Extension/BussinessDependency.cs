@@ -9,7 +9,7 @@ namespace SmartTaskandTimeTrackingSystem.Bussiness.Extension
         public static IServiceCollection AddBussinessDependency(this IServiceCollection services) 
         {
             services.AddScoped<ICategoryService,CategoryManager>();
-            //services.AddScoped<ITaskItemService,TaskItemManager>();
+            services.AddScoped<ITaskItemService,TaskItemManager>();
 
 
             return services;
