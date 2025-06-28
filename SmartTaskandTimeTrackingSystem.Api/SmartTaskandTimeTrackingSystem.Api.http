@@ -1,0 +1,6 @@
+@SmartTaskandTimeTrackingSystem.Api_HostAddress = http://localhost:5027
+
+GET {{SmartTaskandTimeTrackingSystem.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

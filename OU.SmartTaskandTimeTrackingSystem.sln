@@ -11,6 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{0C3138
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTaskandTimeTrackingSystem.Shared", "SmartTaskandTimeTrackingSystem.Shared\SmartTaskandTimeTrackingSystem.Shared.csproj", "{C607B73B-518D-419C-90F3-72EE84892F55}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task", "task", "{EB8FD0D9-FD68-42BF-8CD0-F68017E49193}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTaskandTimeTrackingSystem.Domain", "SmartTaskandTimeTrackingSystem.Domain\SmartTaskandTimeTrackingSystem.Domain.csproj", "{94F88765-7FD0-4C66-B32B-784ED8A0CEFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTaskandTimeTrackingSystem.DataAccess", "SmartTaskandTimeTrackingSystem.DataAccess\SmartTaskandTimeTrackingSystem.DataAccess.csproj", "{C92DCF54-D22B-4D32-9056-EAD9E05EF6F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTaskandTimeTrackingSystem.Bussiness", "SmartTaskandTimeTrackingSystem.Bussiness\SmartTaskandTimeTrackingSystem.Bussiness.csproj", "{46100E3C-78B6-4608-B9DF-C48BDC7DD61E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTaskandTimeTrackingSystem.Api", "SmartTaskandTimeTrackingSystem.Api\SmartTaskandTimeTrackingSystem.Api.csproj", "{24F81514-4241-4641-BAE0-B595CE71F638}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +36,22 @@ Global
 		{C607B73B-518D-419C-90F3-72EE84892F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C607B73B-518D-419C-90F3-72EE84892F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C607B73B-518D-419C-90F3-72EE84892F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F88765-7FD0-4C66-B32B-784ED8A0CEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F88765-7FD0-4C66-B32B-784ED8A0CEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F88765-7FD0-4C66-B32B-784ED8A0CEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F88765-7FD0-4C66-B32B-784ED8A0CEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92DCF54-D22B-4D32-9056-EAD9E05EF6F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92DCF54-D22B-4D32-9056-EAD9E05EF6F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92DCF54-D22B-4D32-9056-EAD9E05EF6F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92DCF54-D22B-4D32-9056-EAD9E05EF6F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46100E3C-78B6-4608-B9DF-C48BDC7DD61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46100E3C-78B6-4608-B9DF-C48BDC7DD61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46100E3C-78B6-4608-B9DF-C48BDC7DD61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46100E3C-78B6-4608-B9DF-C48BDC7DD61E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F81514-4241-4641-BAE0-B595CE71F638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F81514-4241-4641-BAE0-B595CE71F638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F81514-4241-4641-BAE0-B595CE71F638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F81514-4241-4641-BAE0-B595CE71F638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -29,6 +60,11 @@ Global
 		{690C881D-3991-43C8-9720-772BE2AEC8A3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{0C313832-6790-4C7A-86B0-DF869AAAF29A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C607B73B-518D-419C-90F3-72EE84892F55} = {0C313832-6790-4C7A-86B0-DF869AAAF29A}
+		{EB8FD0D9-FD68-42BF-8CD0-F68017E49193} = {690C881D-3991-43C8-9720-772BE2AEC8A3}
+		{94F88765-7FD0-4C66-B32B-784ED8A0CEFE} = {EB8FD0D9-FD68-42BF-8CD0-F68017E49193}
+		{C92DCF54-D22B-4D32-9056-EAD9E05EF6F7} = {EB8FD0D9-FD68-42BF-8CD0-F68017E49193}
+		{46100E3C-78B6-4608-B9DF-C48BDC7DD61E} = {EB8FD0D9-FD68-42BF-8CD0-F68017E49193}
+		{24F81514-4241-4641-BAE0-B595CE71F638} = {EB8FD0D9-FD68-42BF-8CD0-F68017E49193}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {63767666-FCCD-442C-AEC7-12CCDD8951A7}
