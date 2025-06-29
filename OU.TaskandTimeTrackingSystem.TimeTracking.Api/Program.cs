@@ -1,5 +1,6 @@
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Extension;
+using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry;
 using SmartTaskandTimeTrackingSystem.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-
+app.AddTimeEntryGroupEndpointExt();
 
 app.Run();
 
