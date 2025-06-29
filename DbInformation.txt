@@ -1,0 +1,11 @@
+=> TaskDb
+-Username:sa
+-Password:PAssword12*
+-Port:1440
+
+=>TimeTracking
+-Username:admin
+-Password:Psssword12*
+-Port:1441
+
+
