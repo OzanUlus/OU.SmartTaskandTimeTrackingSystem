@@ -1,4 +1,5 @@
 ﻿using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Create;
+using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetActivesEntryByUserId;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Stop;
 
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry
@@ -11,7 +12,8 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry
             app.MapGroup("api/timeEntry").WithTags("TimeEntries")
 
                 .CreateTimeEntryGroupItemEndpoint()
-                .StopTimeEntryGroupItemEndpoint();
+                .StopTimeEntryGroupItemEndpoint()
+                .GetActivesEntryByUserIdGroupItemEndpoint();
 
 
 
