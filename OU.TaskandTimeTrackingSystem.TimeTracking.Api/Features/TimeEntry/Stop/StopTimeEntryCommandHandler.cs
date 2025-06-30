@@ -8,12 +8,12 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Stop
     {
         public async Task<Result> Handle(StopTimeEntryCommand request, CancellationToken cancellationToken)
         {
-            var entry = await timeEntryRepository.GetByIdAsync(request.EntryId);
+            var entry = await timeEntryRepository.GetByIdAsync(request.EntryId, cancellationToken);
             if (entry == null) return new ErrorResult("TimeEntry not found");
 
             entry.EndTime = request.EndTime;
             entry.Duration = request.EndTime - entry.StartTime;
-            await timeEntryRepository.StopTrackingAsync(entry);
+            await timeEntryRepository.StopTrackingAsync(entry, cancellationToken);
             return new SuccessResult("TimeTrackin stoped succesfully");
         }
     }

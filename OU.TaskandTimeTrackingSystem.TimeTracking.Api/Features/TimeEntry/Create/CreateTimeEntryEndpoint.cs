@@ -8,7 +8,7 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Creat
         public static RouteGroupBuilder CreateTimeEntryGroupItemEndpoint(this RouteGroupBuilder group)
         {
 
-             group.MapPost("/", async (CreateTimeEntryCommand command, IMediator mediator) => (await mediator.Send(command))).WithName("CreateTimeEntry").AddEndpointFilter<ValidationFilter<CreateTimeEntryCommandValidator>>();
+             group.MapPost("/", async (CreateTimeEntryCommand command, IMediator mediator) => (await mediator.Send(command))).WithName("CreateTimeEntry").WithSummary("CreateTimeEntry").AddEndpointFilter<ValidationFilter<CreateTimeEntryCommandValidator>>();
 
             return group;
 

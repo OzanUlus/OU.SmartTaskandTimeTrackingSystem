@@ -1,7 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Create;
-using SmartTaskandTimeTrackingSystem.Shared.Filters;
 
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetActivesEntryByUserId
 {
@@ -10,7 +8,7 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetAc
         public static RouteGroupBuilder GetActivesEntryByUserIdGroupItemEndpoint(this RouteGroupBuilder group)
         {
 
-            group.MapGet("/{userId:guid}", async (Guid userId, [FromServices] IMediator mediator) => (await mediator.Send(new GetActivesEntryByUserIdQuery(userId)))).WithName("GetActivesEntryByUserId");
+            group.MapGet("/active/{userId:guid}", async (Guid userId, [FromServices] IMediator mediator) => (await mediator.Send(new GetActivesEntryByUserIdQuery(userId)))).WithName("GetActivesEntryByUserId").WithSummary("GetActivesEntryByUserId");
 
             return group;
 

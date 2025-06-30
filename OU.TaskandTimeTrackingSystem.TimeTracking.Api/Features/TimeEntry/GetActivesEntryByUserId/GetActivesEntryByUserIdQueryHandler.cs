@@ -11,10 +11,10 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetAc
     {
         public async Task<SmartTaskandTimeTrackingSystem.Shared.Result.IResult> Handle(GetActivesEntryByUserIdQuery request, CancellationToken cancellationToken)
         {
-            var entries = await timeEntryRepository.GetActivesEntryByUserId(request.UserId);
+            var entries = await timeEntryRepository.GetActivesEntryByUserId(request.UserId, cancellationToken);
             if (entries == null) return new ErrorResult("TimeEntries not found.");
-            var entryDto = entries.Adapt<List<ResultTimeEntry>>();
-            return new SuccessDataResult<List<ResultTimeEntry>>(entryDto, "TimeEntries listed successfully.");
+            var entryDto = entries.Adapt<List<ResultTimeEntryDto>>();
+            return new SuccessDataResult<List<ResultTimeEntryDto>>(entryDto, "TimeEntries listed successfully.");
         }
     }
 }

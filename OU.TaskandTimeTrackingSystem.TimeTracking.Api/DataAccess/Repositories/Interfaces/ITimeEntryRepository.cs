@@ -4,12 +4,12 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Repositories.
 {
     public interface ITimeEntryRepository
     {
-        Task StartTrackingAsync(TimeEntry timeEntry);
-        Task StopTrackingAsync(TimeEntry timeEntry);
-        Task<IEnumerable<TimeEntry>> GetActivesEntryByUserId(Guid userId);
-        Task<IEnumerable<TimeEntry>> GetAllEntryByUserId(Guid userId);
-        Task<TimeEntry> GetActiveEntryByUserId(Guid userId);
-        Task<TimeEntry?> GetByIdAsync(Guid id);
-        Task DeleteAsync(TimeEntry timeEntry);
+        Task StartTrackingAsync(TimeEntry timeEntry, CancellationToken cancellationToken);
+        Task StopTrackingAsync(TimeEntry timeEntry, CancellationToken cancellationToken);
+        Task<IEnumerable<TimeEntry>> GetActivesEntryByUserId(Guid userId, CancellationToken cancellationToken);
+        Task<IEnumerable<TimeEntry>> GetAllEntryByUserId(Guid userId, CancellationToken cancellationToken);
+        Task<TimeEntry> GetActiveEntryByUserId(Guid userId, CancellationToken cancellationToken);
+        Task<TimeEntry?> GetByIdAsync(Guid id, CancellationToken cancellationToken);
+        Task DeleteAsync(TimeEntry timeEntry, CancellationToken cancellationToken);
     }
 }

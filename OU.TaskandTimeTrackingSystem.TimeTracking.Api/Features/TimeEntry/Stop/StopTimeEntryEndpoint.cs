@@ -9,7 +9,7 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Stop
         public static RouteGroupBuilder StopTimeEntryGroupItemEndpoint(this RouteGroupBuilder group)
         {
 
-            group.MapPut("/", async (StopTimeEntryCommand command, IMediator mediator) => (await mediator.Send(command))).WithName("StopTimeEntry");
+            group.MapPut("/", async (StopTimeEntryCommand command, IMediator mediator) => (await mediator.Send(command))).WithName("StopTimeEntry").WithSummary("StopTimeEntry");
 
             return group;
 

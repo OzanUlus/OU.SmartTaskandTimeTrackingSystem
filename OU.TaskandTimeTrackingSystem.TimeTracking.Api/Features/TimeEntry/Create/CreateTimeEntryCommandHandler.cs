@@ -12,7 +12,7 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Creat
         {
             var entity = request.Adapt<TimeEntry>();
             entity.UserId = identityService.GetUserId;
-            await timeEntryRepository.StartTrackingAsync(entity);
+            await timeEntryRepository.StartTrackingAsync(entity, cancellationToken);
             return new SuccessResult("TimeTracking started.");
         }
     }
