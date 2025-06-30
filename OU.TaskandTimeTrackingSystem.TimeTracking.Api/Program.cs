@@ -1,5 +1,6 @@
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Extension;
+using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry;
 using SmartTaskandTimeTrackingSystem.Shared.Extensions;
 
@@ -24,6 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.AddTimeEntryGroupEndpointExt();
+app.BreakPeriodGroupEndpointExt();
 
 app.Run();
 

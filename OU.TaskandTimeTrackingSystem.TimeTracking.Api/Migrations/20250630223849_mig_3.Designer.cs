@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Context;
@@ -11,9 +12,11 @@ using OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Context;
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Migrations
 {
     [DbContext(typeof(TimeTrackingContext))]
-    partial class TimeTrackingContextModelSnapshot : ModelSnapshot
+    [Migration("20250630223849_mig_3")]
+    partial class mig_3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

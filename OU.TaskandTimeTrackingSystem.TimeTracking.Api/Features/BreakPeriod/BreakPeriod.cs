@@ -9,6 +9,6 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod
 
         public DateTime StartTime { get; set; }
         public DateTime? EndTime { get; set; }
-        public TimeSpan? Duration => EndTime.HasValue ? EndTime.Value - StartTime : null;
+        public TimeSpan? Duration { get; set; } 
     }
 }

@@ -15,6 +15,7 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Extension
             });
 
             services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
+            services.AddScoped<IBreakPeriodRepository, BreakPeriodRepository>();
 
             return services;
         }
