@@ -1,4 +1,5 @@
 ﻿using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Create;
+using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Delete;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetActiveEntryByUserId;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetActivesEntryByUserId;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetAllEntryByUserId;
@@ -19,7 +20,8 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry
                 .GetActivesEntryByUserIdGroupItemEndpoint()
                 .GetAllEntryByUserIdGroupItemEndpoint()
                 .GetActiveEntryByUserIdGroupItemEndpoint()
-                .GetByIdAsyncGroupItemEndpoint();
+                .GetByIdAsyncGroupItemEndpoint()
+                .DeleteTimeEntryGroupItemEndpoint();
 
 
 
