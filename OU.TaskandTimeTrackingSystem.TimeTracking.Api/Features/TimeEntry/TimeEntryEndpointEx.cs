@@ -2,6 +2,7 @@
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetActiveEntryByUserId;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetActivesEntryByUserId;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetAllEntryByUserId;
+using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.GetByIdAsync;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry.Stop;
 
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry
@@ -17,7 +18,8 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry
                 .StopTimeEntryGroupItemEndpoint()
                 .GetActivesEntryByUserIdGroupItemEndpoint()
                 .GetAllEntryByUserIdGroupItemEndpoint()
-                .GetActiveEntryByUserIdGroupItemEndpoint();
+                .GetActiveEntryByUserIdGroupItemEndpoint()
+                .GetByIdAsyncGroupItemEndpoint();
 
 
 
