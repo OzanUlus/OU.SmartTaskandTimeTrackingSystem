@@ -23,6 +23,12 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Repositories.
             await _timeTrackingContext.SaveChangesAsync(cancellationToken);
         }
 
+        public async Task<BreakPeriod> GetBreakPeriodByIdAsync(Guid id, CancellationToken cancellationToken)
+        {
+            var period = await _dbSet.FindAsync(id, cancellationToken);
+            return period!;
+        }
+
         public async Task<IEnumerable<BreakPeriod>> GetBreakPeriodsByTimeEntryIdAsync(Guid timeEntryId, CancellationToken cancellationToken)
         {
             var periods = await _dbSet.Where(bp => bp.TimeEntryId == timeEntryId).ToListAsync(cancellationToken);
@@ -30,11 +36,8 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Repositories.
         }
 
    
-        public async Task StopBreakPeriodAsync(Guid breakPeriodId, DateTime EndTime, CancellationToken cancellationToken)
+        public async Task StopBreakPeriodAsync(BreakPeriod period, CancellationToken cancellationToken)
         {
-            var period = await _dbSet.FindAsync(breakPeriodId, cancellationToken);
-            period!.EndTime = EndTime;
-            period.Duration = period.EndTime - period.StartTime;
             _dbSet.Update(period);
             await _timeTrackingContext.SaveChangesAsync(cancellationToken);
         }
