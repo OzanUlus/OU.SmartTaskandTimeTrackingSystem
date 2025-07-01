@@ -8,7 +8,7 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders
         public TimeEntry.TimeEntry TimeEntry { get; set; } = null!;
 
         public DateTime ReminderTime { get; set; }
-        public bool IsSent { get; set; } = false;
+        public bool IsSent { get; set; }
 
     }
 }
