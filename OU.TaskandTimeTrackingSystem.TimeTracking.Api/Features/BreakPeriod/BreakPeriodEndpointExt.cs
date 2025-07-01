@@ -1,4 +1,5 @@
 ﻿using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod.Create;
+using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod.GetBreakPeriodsByTimeEntryId;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod.Stop;
 
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod
@@ -11,7 +12,8 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod
             app.MapGroup("api/breakPeriod").WithTags("BreakPeriods")
 
                 .CreateBreakPeriodGroupItemEndpoint()
-                .StopBreakPeriodGroupItemEndpoint();
+                .StopBreakPeriodGroupItemEndpoint()
+                .GetBreakPeriodsByTimeEntryIdGroupItemEndpoint();
 
 
 
