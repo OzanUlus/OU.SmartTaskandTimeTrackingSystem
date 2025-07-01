@@ -1,6 +1,7 @@
 ﻿using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders.Create;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders.GetAll;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders.GetById;
+using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders.Update;
 
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders
 {
@@ -13,7 +14,9 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders
 
                 .CreateReminderGroupItemEndpoint()
                 .GetAllReminderGroupItemEndpoint()
-                .GetByIdReminderGroupItemEndpoint();
+                .GetByIdReminderGroupItemEndpoint()
+                .UpdateReminderGroupItemEndpoint()
+                .DeleteReminderGroupItemEndpoint();
              
 
 
