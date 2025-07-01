@@ -1,5 +1,4 @@
 ﻿using OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess;
-using OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Tags;
 
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry
 {
@@ -15,6 +14,6 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.TimeEntry
         public string? Note { get; set; }
 
         public IEnumerable<BreakPeriod.BreakPeriod>? BreakPeriods { get; set; }
-        public IEnumerable<Tag> Tags { get; set; }
+
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Context;
@@ -11,9 +12,11 @@ using OU.TaskandTimeTrackingSystem.TimeTracking.Api.DataAccess.Context;
 namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Migrations
 {
     [DbContext(typeof(TimeTrackingContext))]
-    partial class TimeTrackingContextModelSnapshot : ModelSnapshot
+    [Migration("20250701111334_mig_4")]
+    partial class mig_4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,32 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.ActivityLogs.ActivityLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActivityLogs");
+                });
 
             modelBuilder.Entity("OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.BreakPeriod.BreakPeriod", b =>
                 {
@@ -47,6 +76,36 @@ namespace OU.TaskandTimeTrackingSystem.TimeTracking.Api.Migrations
                     b.HasIndex("TimeEntryId");
 
                     b.ToTable("BreakPeriods");
+                });
+
+            modelBuilder.Entity("OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.ManuelTimeAdjustments.ManuelTimeAdjustment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AdjustmentDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<TimeSpan>("Duration")
+                        .HasColumnType("interval");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<Guid?>("RelatedTimeEntryId")
+                        .HasMaxLength(16)
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasMaxLength(16)
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ManuelTimeAdjustments");
                 });
 
             modelBuilder.Entity("OU.TaskandTimeTrackingSystem.TimeTracking.Api.Features.Reminders.Reminder", b =>
